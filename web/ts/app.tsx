@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: off */
 import InsomniaSnippet from "./components/InsomniaSnippet";
 import Photon from "photoncss";
 import { Button, Dialog, DialogBody, DialogTitle, Snackbar } from "photoncss/lib/react";

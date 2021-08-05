@@ -71,7 +71,7 @@ declare interface InsomniaResource extends Record<string, unknown> {
 		value: string;
 		id: string;
 	}[];
-	authentication: {};
+	authentication: Record<string, unknown>;
 	metaSortKey: number;
 	isPrivate: boolean;
 	settingStoreCookies: boolean;

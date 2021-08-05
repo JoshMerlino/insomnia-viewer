@@ -1,7 +1,8 @@
 {
-	"name": "tsx-app",
+	"name": "insomnia-viewer",
+	"display-name": "Insomnia Viewer",
 	"version": "1.0.0",
-	"description": "Create fast single-page progressive-web-apps using PhotonCSS 12, React and TypeScript.",
+	"description": "View exported Insomnia documentation on the web!",
 	"main": "lib/src",
 	"types": "lib/src",
 	"author": "Josh Merlino",

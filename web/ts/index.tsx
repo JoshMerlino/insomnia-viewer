@@ -1,19 +1,11 @@
+import App from "./components/App";
+import * as OfflinePluginRuntime from "offline-plugin/runtime";
+import "photoncss/dist/photon.css";
 import React from "react";
 import { render } from "react-dom";
-import Runtime from "./runtime/Runtime";
-
-// Import scripts
 import "script-loader!jquery";
-import "./runtime/util/offlineInstaller";
-
-// Import stylesheets
-import "photoncss/dist/photon.css";
 import "../../styles/main.less";
-
-// Import all views
-const views: View[] = [];
-const importAll = (c: __WebpackModuleApi.RequireContext): void => c.keys().forEach(m => views.push(c(m)));
-importAll(require.context("./views", true, /\.js$/));
+import app from "./app";
 
 // Wait for the DOM to load before rendering
 document.addEventListener("DOMContentLoaded", function() {
@@ -24,6 +16,40 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.body.append(root);
 
 	// Render root component into react-root container
-	render(<Runtime views={views}/>, document.getElementById("root"));
+	render(<App/>, document.getElementById("root"));
 
 });
+
+// If is running in production
+if (PRODUCTION) {
+
+	// Register a static asset caching service-worker
+	OfflinePluginRuntime.install();
+
+	// Get client version
+	/* eslint @typescript-eslint/no-var-requires: 0 */
+	const client: string = require("raw-loader!../../../hash").default;
+
+	// Get server version
+	(function update(): void {
+
+		fetch(`/hash?${Date.now()}`)
+			.then(resp => resp.text())
+			.then(server => {
+
+				// Make sure client recieved a hash
+				if (server.match(/([0-9]|[a-f]|[A-F]){8}-([0-9]|[a-f]|[A-F]){4}-([0-9]|[a-f]|[A-F]){4}-([0-9]|[a-f]|[A-F]){4}-([0-9]|[a-f]|[A-F]){12}/gmi)) {
+
+					// Update the client
+					if (server !== client) app.update(server.substr(0, 8));
+
+					// If there is no update available, retry in 60s
+					else setTimeout(update, 60000);
+
+				}
+
+			});
+
+	}());
+
+}

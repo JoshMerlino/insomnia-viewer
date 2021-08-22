@@ -15,22 +15,17 @@ export = merge(config, <Configuration>{
 	devtool: "eval-source-map",
 	devServer: {
 		port: 8080,
-		contentBase: path.resolve("web"),
-		index: "index.html",
-		watchContentBase: true,
-		writeToDisk: false,
 		historyApiFallback: {
 			index: "/index.html",
 			disableDotRule: true
 		},
 		proxy: {
-        	"/api": {
-            	target: "http://localhost/",
-            	secure: false
-        	}
-    	},
+			"/api": {
+				target: "http://localhost/",
+				secure: false
+			}
+		},
 		hot: true,
-		inline: true,
 		open: true,
 		host: "localhost"
 	}

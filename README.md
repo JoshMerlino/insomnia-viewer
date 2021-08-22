@@ -1,5 +1,5 @@
 # insomnia-viewer
-View exported [Insomnia](insomnia.rest) documentation on the web!
+View exported [Insomnia](https://insomnia.rest) documentation on the web!
 
 ### Checks
 * [![Code Style Analysis](https://github.com/JoshMerlino/insomnia-viewer/actions/workflows/code-style-analysis.yml/badge.svg)](https://github.com/JoshMerlino/insomnia-viewer/actions/workflows/code-style-analysis.yml)

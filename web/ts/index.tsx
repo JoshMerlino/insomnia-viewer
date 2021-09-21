@@ -5,7 +5,7 @@ import React from "react";
 import { render } from "react-dom";
 import "script-loader!jquery";
 import "../../styles/main.less";
-import app from "./app";
+import ErrorBoundry from "./runtime/ErrorBoundry";
 
 // Wait for the DOM to load before rendering
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.body.append(root);
 
 	// Render root component into react-root container
-	render(<App/>, document.getElementById("root"));
+	render(
+		<ErrorBoundry>
+			<Runtime views={views}/>
+		</ErrorBoundry>,
+		document.getElementById("root"));
 
 });
 

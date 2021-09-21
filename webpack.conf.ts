@@ -62,7 +62,6 @@ export = <Configuration>{
 				}
 			} ]
 		}, {
-			test: /\.([\s\S]*?)(woff|woff2|eot|ttf|otf)$/,
 			include: path.resolve("web/static"),
 			use: [ {
 				loader: "file-loader",

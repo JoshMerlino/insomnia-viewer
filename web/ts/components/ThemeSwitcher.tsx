@@ -1,5 +1,6 @@
+import { guid, Waves } from "photoncss/lib";
 import { Icon } from "photoncss/lib/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export type Theme = "light" | "dark" | "auto";
 export const themes: Theme[] = [ "light", "dark", "auto" ];
@@ -18,6 +19,10 @@ export default function ThemeSwitcher(): JSX.Element {
 		localStorage.setItem("theme", newTheme);
 		$("body").attr("class", `theme--${theme}`);
 		__setTheme(newTheme);
+		const color = getComputedStyle(document.body)
+			.getPropertyValue("--palette_header_background")
+			.trim();
+		$("meta[name=\"theme-color\"]").attr("content", color);
 	}
 
 	// On component render
@@ -25,9 +30,25 @@ export default function ThemeSwitcher(): JSX.Element {
 		setTheme(theme);
 	});
 
+	const id = guid();
+
+	useEffect(function() {
+		document.onkeydown = function (event) {
+			if (event.key === "F10") {
+				event.preventDefault();
+				Waves.ripple($("#" + id)[0], {});
+				next();
+			}
+		};
+	});
+
+	function next() {
+		setTheme(themes[themes.indexOf(theme) + 1] || themes[0]);
+	}
+
 	// Return toggler
 	return (
-		<Icon onClick={ (): void => setTheme(themes[themes.indexOf(theme) + 1] || themes[0]) }>
+		<Icon onClick={next} id={id}>
 			{ theme === "auto" && "brightness_auto" }
 			{ theme === "dark" && "dark_mode" }
 			{ theme === "light" && "light_mode" }

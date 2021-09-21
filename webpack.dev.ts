@@ -20,6 +20,10 @@ export = merge(config, <Configuration>{
 			disableDotRule: true
 		},
 		proxy: {
+			"/insomnia.json": {
+				target: "http://localhost/",
+				secure: false
+			},
 			"/api": {
 				target: "http://localhost/",
 				secure: false

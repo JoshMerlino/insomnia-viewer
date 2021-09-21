@@ -6,6 +6,8 @@ import "script-loader!jquery";
 import "../../styles/main.less";
 import ErrorBoundry from "./runtime/ErrorBoundry";
 
+import "./runtime/util/offlineInstaller";
+
 // Wait for the DOM to load before rendering
 document.addEventListener("DOMContentLoaded", function() {
 

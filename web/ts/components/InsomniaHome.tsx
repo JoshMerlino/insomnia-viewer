@@ -9,16 +9,14 @@ export default function InsomniaItem(): JSX.Element | null {
 	useEffect(function() {
 
 		const readme = fetch("/README.md")
-			.then(res => {
-				if (res.status === 404) return null;
-				return res;
-			})
-			.then(res => res.text())
-			.then(newReadMe => {
-				setReadMe(newReadMe);
-				document.title = "README • Insomnia";
-			})
-			.catch(() => setReadMe(false));
+			.then(async res => {
+				if (res.status !== 404) {
+					setReadMe(await res.text());
+					document.title = "README • Insomnia";
+					return;
+				}
+				return setReadMe(false);
+			});
 
 	}, []);
 

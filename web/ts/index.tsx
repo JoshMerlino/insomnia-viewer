@@ -5,6 +5,7 @@ import { render } from "react-dom";
 import "script-loader!jquery";
 import "../../styles/main.less";
 import ErrorBoundry from "./runtime/ErrorBoundry";
+import PWAInstaller from "pwa-installer-react";
 
 import "./runtime/util/offlineInstaller";
 
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	render(
 		<ErrorBoundry>
 			<App/>
+			<PWAInstaller/>
 		</ErrorBoundry>,
 		document.getElementById("root"));
 

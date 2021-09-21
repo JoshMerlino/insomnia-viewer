@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { TextIcon } from "photoncss/lib/react";
 import Markdown from "./Markdown";
 
-export let useReadme = false;
-
 export default function InsomniaItem(): JSX.Element | null {
 
 	const [ readme, setReadMe ] = useState<null | false | string>(null);
@@ -14,7 +12,6 @@ export default function InsomniaItem(): JSX.Element | null {
 			.then(res => res.text())
 			.then(newReadMe => {
 				setReadMe(newReadMe);
-				useReadme = true;
 				document.title = "README • Insomnia";
 			})
 			.catch(() => setReadMe(false));
@@ -41,9 +38,7 @@ export default function InsomniaItem(): JSX.Element | null {
 
 	return (
 		<div className="insomnia-docs">
-
 			<Markdown>{ readme }</Markdown>
-
 		</div>
 	);
 }

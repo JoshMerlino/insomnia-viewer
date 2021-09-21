@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Render root component into react-root container
 	render(
 		<ErrorBoundry>
-			<Runtime views={views}/>
+			<App/>
 		</ErrorBoundry>,
 		document.getElementById("root"));
 

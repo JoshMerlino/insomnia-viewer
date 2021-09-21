@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TextIcon } from "photoncss/lib/react";
+import Markdown from "./Markdown";
 
-export default function InsomniaItem(): JSX.Element {
+export let useReadme = false;
 
-	return (
+export default function InsomniaItem(): JSX.Element | null {
+
+	const [ readme, setReadMe ] = useState<null | false | string>(null);
+
+	useEffect(function() {
+
+		const readme = fetch("/README.md")
+			.then(res => res.text())
+			.then(newReadMe => {
+				setReadMe(newReadMe);
+				useReadme = true;
+				document.title = "README • Insomnia";
+			})
+			.catch(() => setReadMe(false));
+
+	}, []);
+
+	if (readme === null || readme === false) return (
 		<div style={{ textAlign: "center", padding: "35vh 0" }}>
 			<h1>
 				<TextIcon style={{
@@ -18,6 +36,14 @@ export default function InsomniaItem(): JSX.Element {
 			<br/>
 
 			<h2>Select any request to view documentation.</h2>
+		</div>
+	);
+
+	return (
+		<div className="insomnia-docs">
+
+			<Markdown>{ readme }</Markdown>
+
 		</div>
 	);
 }

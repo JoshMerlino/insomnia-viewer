@@ -24,6 +24,10 @@ export = merge(config, <Configuration>{
 				target: "http://localhost/",
 				secure: false
 			},
+			"/README.md": {
+				target: "http://localhost/",
+				secure: false
+			},
 			"/api": {
 				target: "http://localhost/",
 				secure: false

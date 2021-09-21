@@ -6,4 +6,4 @@ View exported [Insomnia](https://insomnia.rest) documentation on the web!
 * [![public_html](https://github.com/JoshMerlino/insomnia-viewer/actions/workflows/public-html.yml/badge.svg)](https://github.com/JoshMerlino/insomnia-viewer/actions/workflows/public-html.yml)
 * [![Test CI](https://github.com/JoshMerlino/insomnia-viewer/actions/workflows/test-ci.yml/badge.svg)](https://github.com/JoshMerlino/insomnia-viewer/actions/workflows/test-ci.yml)
 
-## [Download](https://github.com/JoshMerlino/insomnia-viewer/archive/refs/heads/site.zip)
+## [Download](https://github.com/JoshMerlino/insomnia-viewer/archive/refs/heads/public_html.zip)

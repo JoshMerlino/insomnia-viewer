@@ -38,7 +38,7 @@ export default function InsomniaSidebar({ resources }: Props): JSX.Element {
 		return (
 			<>
 				<Link to={"./"}>
-					<ListItem className={classnames("insomnia-item", "round", active && "active")} icon={<TextIcon style={{ padding: "0 9px" }}>list</TextIcon>}>Read me</ListItem>
+					<ListItem className={classnames("insomnia-item", "round", active && "active")} icon={<TextIcon style={{ padding: "0 9px" }}>description</TextIcon>}>README.md</ListItem>
 				</Link>
 				<hr />
 				{ resources.filter(resource => resource._type === "request").map(item) }

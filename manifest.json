@@ -1,0 +1,81 @@
+{
+  "icons": [
+    {
+      "src": "static/icon_512x512.177188dc40a0ba1f3fb3e69e17fddd72.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "static/icon_384x384.41a6694c090b681440cc8331efb357de.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "static/icon_256x256.c5de6c6776f98f3d525366fe526e4a41.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "static/icon_192x192.95d51556b875b90cb2f55403dc072019.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "static/icon_128x128.b94b653740cdaec6a6411b7c6bb40fa6.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "static/icon_96x96.47464ec76b9b397449bcbf4a45f141fc.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "static/icon_512x512.177188dc40a0ba1f3fb3e69e17fddd72.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "static/icon_384x384.41a6694c090b681440cc8331efb357de.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "static/icon_256x256.c5de6c6776f98f3d525366fe526e4a41.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "static/icon_192x192.95d51556b875b90cb2f55403dc072019.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "static/icon_128x128.b94b653740cdaec6a6411b7c6bb40fa6.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "static/icon_96x96.47464ec76b9b397449bcbf4a45f141fc.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "name": "Insomnia Viewer",
+  "short_name": "Insomnia Viewer",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "version": "1.0.0",
+  "description": "View exported Insomnia documentation on the web!",
+  "developerName": "Josh Merlino",
+  "developerURL": "https://joshmerlino.github.io",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}

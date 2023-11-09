@@ -57,7 +57,7 @@
 		"@types/react": "^18.2.37",
 		"@types/react-dom": "^18.2.14",
 		"@types/react-router-dom": "^5.3.3",
-		"@types/remove-markdown": "^0.3.3",
+		"@types/remove-markdown": "^0.3.4",
 		"@types/terser-webpack-plugin": "^5.0.4",
 		"@types/uuid": "^9.0.7",
 		"@types/webpack": "^5.28.0",

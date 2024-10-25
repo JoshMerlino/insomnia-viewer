@@ -45,7 +45,7 @@
 		"@types/copy-webpack-plugin": "^8.0.1",
 		"@types/cors": "^2.8.17",
 		"@types/express": "^5.0.0",
-		"@types/express-rate-limit": "^6.0.0",
+		"@types/express-rate-limit": "^6.0.2",
 		"@types/httpsnippet": "^1.23.4",
 		"@types/jquery": "^3.5.32",
 		"@types/mini-css-extract-plugin": "^2.4.0",
